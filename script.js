@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var pending = $('.pending').length;
     var completed = $('.completed').length;
-    $('.total').text('Pending: ');
+    $('.total').text('Pending: ' + pending + ' Completed: ' + completed);
 
     function addToList(item) {
         var status_label = '<span class="label pending">Pending</span>'
@@ -21,8 +21,11 @@ $(document).ready(function() {
         var li_node = $(this).parent();
         li_node.append('<span class="label success">Done!</span>');
         li_node.addClass('completed');
-        // li_node.remove('<span class="label pending">Pending</span>');
-        // $('.pending').remove();
+        $(this).remove();
     })
+
+    function updateTotal() {
+     
+    }
 
 });
